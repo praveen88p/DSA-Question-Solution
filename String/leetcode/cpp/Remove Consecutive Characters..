@@ -1,0 +1,20 @@
+It is a basic questiion from the topic string but it has been asked in the interview 
+
+Given a string S. For each index i(1<=i<=N-1), erase it if s[i] is equal to s[i-1] in the string.
+
+
+    string removeConsecutiveCharacter(string S)
+    {
+        // code here.
+        string str ;
+        for(int i = 0; i<S.size(); i++){
+            
+            if(S[i] == S[i+1]){
+                continue;
+            }
+            else{
+                str.push_back(S[i]);
+            }
+        }
+        return str;
+    }
