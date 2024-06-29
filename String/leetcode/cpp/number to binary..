@@ -11,3 +11,7 @@ n = n/2;
 reverse(res);
 return res;
 }
+
+
+Time Complexcity is  = Loge base 2 n   ---(whenever you divide any number then its time complexcity become this)
+Space Complexcity is = Loge base 2 n   ---(becous the number of step you are take is equal to the number of reminde which we are storing in the staring)
