@@ -1,0 +1,39 @@
+Given a 0-indexed string word and a character ch, reverse the segment of word that 
+starts at index 0 and ends at the index of the first occurrence of ch (inclusive).
+If the character ch does not exist in word, do nothing.
+
+For example, if word = "abcdefd" and ch = "d", then you should reverse the segment that
+starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
+Return the resulting string.
+
+
+ string swapthestr(string s ){
+        int n = s.size()-1;
+        for(int j = 0; j<=n/2; j++){
+            swap(s[j],s[n-j]);
+        }
+        return s;
+    }
+    string reversePrefix(string word, char ch) {
+        int n = word.size();
+        int count = 0;
+        string finall = "";
+        string semi = ""; 
+        for(int i =0; i<n; i++){
+            if(count == 0){
+                if(word[i] == ch){
+                    semi += word[i];
+                    finall = swapthestr(semi);
+                    count = 1;
+                }
+                else{
+                    semi = semi + word[i];
+                }
+            }
+            else{
+                finall = finall + word[i];
+            }
+        }
+        if(count == 0 )return word;
+        return finall;
+    }
