@@ -1,0 +1,35 @@
+A sentence is a list of words that are separated by a single space with no leading or trailing spaces.
+
+You are given an array of strings sentences, where each sentences[i] represents a single sentence.
+
+Return the maximum number of words that appear in a single sentence.
+
+
+
+   int findcountstr(string st){
+        int siz = st.size();
+        int count = 1;
+        for(int j = 0; j< siz; j++){
+            if(st[j] == ' '){
+                count++;
+            }
+            else{
+                continue;
+            }
+        }
+        return count;
+    }
+    int mostWordsFound(vector<string>& sentences) {
+        int n = sentences.size();
+        int ans = 0;
+        for(int i = 0; i< n ; i++){
+            int result = findcountstr(sentences[i]);
+            ans = max(ans,result);
+        }
+        return ans;
+    }
+
+
+
+Time complexcity  === O(2n)  
+Space complexcity is  === O(1)
