@@ -1,0 +1,28 @@
+Given two strings A and B, find if A is a subsequence of B.
+
+  bool isSubSequence(string A, string B) 
+    {
+        // code here
+        int count = 0;
+        for(int i = 0; i< B.size(); i++){
+            if(B[i] == A[count]){
+                count++;
+                if(count == A.size()){
+                    break;
+                }
+            }
+            else{
+                continue;
+            }
+        }
+        if(count == A.size()){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+
+Expected Time Complexity: O(N) where N is length of string B.
+Expected Auxiliary Space: O(1)
