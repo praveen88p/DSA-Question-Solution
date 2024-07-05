@@ -1,0 +1,37 @@
+Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s.
+
+A shift on s consists of moving the leftmost character of s to the rightmost position.
+
+For example, if s = "abcde", then it will be "bcdea" after one shift.
+
+
+    bool GoForCheck(string lo , string finall, int ptrr){
+        for(int j = 0; j < finall.size(); j++){
+            if(finall[j] != lo[ptrr]){
+                return 0;
+            }
+            else{
+                ptrr++;
+            }
+        }
+        return 1;
+    }
+
+    bool rotateString(string s, string goal) {
+        int n1 = s.size(),n2= goal.size();
+        if(n1 != n2)return 0;
+
+        string whole = s + s;
+        for(int i = 0; i<whole.size(); i++){
+            if(whole[i] == goal[0]){
+               int ans = GoForCheck(whole,goal,i);
+               if(ans == true){
+                return 1;
+               }
+            }
+            else{
+                continue;
+            }
+        }
+        return 0;
+    }
