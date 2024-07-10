@@ -1,0 +1,26 @@
+Given a string str which may contain lowercase and uppercase characters. The task is to remove all duplicate characters from the string and find the resultant string. The order of
+remaining characters in the output should be same as in the original string.
+
+  int goforcheck(string str1, char val){
+        int ans = 0;
+        for(int j =0; j < str1.size(); j++){
+            if(str1[j] == val){
+                ans = 1;
+            }
+            else{
+                continue;
+            }
+        }
+        return ans;
+    }
+	string removeDuplicates(string str) {
+	    string s = "";
+	    int result = 0;
+	    for(int i =0; i< str.size() ; i++){
+	        result = goforcheck(s, str[i]);
+	        if(result != 1){
+	            s = s + str[i];
+	        }
+	    }
+	    return s;
+	}
